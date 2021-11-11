@@ -8,7 +8,6 @@ import * as fields from '../../../helper'
 export default function Detail() {
     const id = useLocation()?.pathname?.replace('/', '')
     const detail = useSelector((state) => getSubmissionDetail({ state, id }))
-    console.log(detail);
     return (
         <SimpleGrid className='p-5'>
             <SimpleGrid>
@@ -70,7 +69,6 @@ export default function Detail() {
                         <SimpleGrid key={`skill${idx}`} className='mt-5'>
                             <div className='font-bold'>No.{idx + 1}</div>
                             {fields?.keahlian?.filter(fltr => fltr.inputType !== 'action')?.map(data => {
-                                console.log(skill[data.name], skill[data.name]?.label);
                                 return (
                                     <Table className='text-left' textAlign='left'>
                                         <Tr>
